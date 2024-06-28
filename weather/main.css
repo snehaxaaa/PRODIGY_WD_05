@@ -1,0 +1,181 @@
+/* Import Orbitron font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: #1e293b;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  button {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+} 
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-size: cover;
+  background-position: top center;
+  animation: fadeIn 2s ease-in-out;
+  /* Initial background image */
+  background-image: url('bg.jpg');
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 15px 15px;
+}
+
+header input {
+  width: 100%;
+  max-width: 280px;
+  padding: 12px 20px; /* Adjust padding for better appearance */
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 16px; /* Rounded corners */
+  border-bottom: 3px solid transparent; /* Initially transparent bottom border */
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 300;
+  transition: background-color 0.3s ease-out, border-bottom-color 0.3s ease-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+}
+
+header input::placeholder {
+  color: #fff; /* White color */
+}
+
+header input:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-bottom-color: #fff; /* White bottom border on focus */
+}
+
+main {
+  flex: 1 1 100%;
+  padding: 25px 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.location .city {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.location .date {
+  color: #fff;
+  font-size: 16px;
+}
+
+.current .temp {
+  color: #fff;
+  font-size: 102px;
+  font-weight: 900;
+  margin: 30px 0px;
+  text-shadow: 0 0 5px rgba(85, 85, 85, 0.7), 0 0 10px rgba(102, 102, 102, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.current .temp span {
+  font-weight: 500;
+}
+
+.current .weather {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px rgba(85, 85, 85, 0.7), 0 0 10px rgba(102, 102, 102, 0.7);
+}
+
+.current .hi-low {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  text-shadow: 0 0 5px rgba(85, 85, 85, 0.7), 0 0 10px rgba(102, 102, 102, 0.7);
+}
+
+/* Styling numbers to look like digital display */
+.number {
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;  /* Bright green color for digital display */
+  text-shadow: 0 0 5px rgba(85, 85, 85, 0.7), 0 0 10px rgba(102, 102, 102, 0.7);
+  transition: transform 0.3s ease-out, color 0.3s ease-out;
+}
+
+.number:hover {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+.location .city .number,
+.location .date .number,
+.current .temp .number,
+.current .hi-low .number {
+  display: inline-block;
+}
